@@ -42,12 +42,12 @@ module.exports.create = function(req,res){
             });
         }
         else{
-            return res.redirect('back');
+            return res.redirect('/users/sign-in');
         }
     })
 }
 
 // sign in and create a session for the user
 module.exports.createSession = function(req,res){
-    // TODO later
+    
 }
