@@ -4,7 +4,6 @@ const nodemailer = require('../config/nodemailer');
 exports.newComment = (comment) => {
     console.log('inside newComment mailer');
     nodemailer.transporter.sendMail({
-        from: 'dheeraj1863.be20@chitkara.edu.in',
         to: comment.user.email,
         subject: "New comment published",
         html: `<h1>Yup , your comment is now published ${comment.content} </h1>`
