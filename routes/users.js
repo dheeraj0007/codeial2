@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-
+// const upload = require('../utils/multer');
+const multer = require('multer');
+const fileUpload = multer();
 const usersController = require('../controllers/users_controller');
 
 router.get('/', usersController.home);
 router.get('/profile/:id', passport.checkAuthentication, usersController.profile);
-router.post('/update/:id', passport.checkAuthentication, usersController.update);
+router.post('/update/:id', passport.checkAuthentication, fileUpload.single("image"), usersController.update);
 router.get('/sign-up', usersController.signUp);
 router.get('/sign-in', usersController.signIn);
 router.post('/create', usersController.create);

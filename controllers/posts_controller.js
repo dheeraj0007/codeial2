@@ -36,7 +36,6 @@ module.exports.destroy = async function (req, res) {
                     message: "Post deleted ",
                 });
             }
-
             return res.redirect('back');
         }
         else {
